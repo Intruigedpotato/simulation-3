@@ -63,6 +63,11 @@ app.get('/auth/logout', (req, res) => {
 }
 )
 
+app.get('/api/currentuser', (req, res, next) => {
+    console.log(req.user)
+    res.status(200).send(req.user);
+})
+
 app.get('/api/users', (req, res, next) => {
     const db = req.app.get('db');
     db.get_all_users()
