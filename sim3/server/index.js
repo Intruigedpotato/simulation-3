@@ -4,10 +4,12 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     massive = require('massive'),
     passport = require('passport'),
-    Auth0Strategy = require('passport-auth0');
+    Auth0Strategy = require('passport-auth0'),
+    cors = require('cors');
 
 const port = 3010;
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SECRET,
@@ -61,11 +63,13 @@ app.get('/auth/logout', (req, res) => {
 }
 )
 
-app.get('api/users', (req, res, next) => {
+app.get('/api/users', (req, res, next) => {
     const db = req.app.get('db');
-
-    db.find_users()
-    .then( users => res.status(200).send(users))
+    db.get_all_users()
+        .then(users => {
+            console.log(users)
+            return res.status(200).send(users)
+        })
     .catch( () => res.status(500).send() );
 
 })
