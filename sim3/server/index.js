@@ -58,6 +58,16 @@ app.get('/auth/me', (req, res) => {
 app.get('/auth/logout', (req, res) => {
     req.logOut();
     res.redirect(302,'http://localhost:3000/#/')
+}
+)
+
+app.get('api/users', (req, res, next) => {
+    const db = req.app.get('db');
+
+    db.find_users()
+    .then( users => res.status(200).send(users))
+    .catch( () => res.status(500).send() );
+
 })
 
 passport.serializeUser(function (id, done) {
