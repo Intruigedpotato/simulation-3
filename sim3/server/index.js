@@ -74,6 +74,14 @@ app.get('/api/users', (req, res, next) => {
 
 })
 
+app.put('api/updateuser/:id', (req, res, next) => {
+    const db = req.app.get('db');
+    const {body, query} = req;
+    db.update_user([body.id, body.first_name, body.last_name, body.eye_color, body.hair_color,body.gender, body.hobby, body.birthdate])
+    .then(() => res.status(200).send(req.user) )
+    .catch( () => res.status(500).send() );
+})
+
 passport.serializeUser(function (id, done) {
     console.log(1,id)
     done(null, id);
