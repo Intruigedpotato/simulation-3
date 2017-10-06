@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Login.css';
 
 
  class Login extends Component {
@@ -12,9 +13,14 @@ import React, {Component} from 'react';
     render() {
         return (
             <div className="parent-login">
-               <a href={ process.env.REACT_APP_LOGIN } >    
-                <button>Login / Register</button>
-               </a>
+              <div className="login-box">
+                  <div className="button-container"></div>
+               <a  href={ process.env.REACT_APP_LOGIN } >    
+                {/* <button className="click-me"> */}
+                    Login / Register
+                    {/* </button> */}
+                </a>
+                </div>
             </div>
         )
     }
