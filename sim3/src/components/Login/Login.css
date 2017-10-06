@@ -1,3 +1,5 @@
-deg, #ff70a6,.parent-login{
+.parent-login{
+    height: 100%;
+    width: 100%;
     background-image: linear-gradient(99deg, #ff70a6, #ff9770 40%, #ffd670 73%, #e9ff70);
 }

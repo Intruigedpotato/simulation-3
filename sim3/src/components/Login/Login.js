@@ -12,7 +12,9 @@ import React, {Component} from 'react';
     render() {
         return (
             <div className="parent-login">
+               <a href={ process.env.REACT_APP_LOGIN } >    
                 <button>Login / Register</button>
+               </a>
             </div>
         )
     }
