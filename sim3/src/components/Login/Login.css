@@ -1,5 +1,35 @@
 .parent-login{
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     width: 100%;
     background-image: linear-gradient(99deg, #ff70a6, #ff9770 40%, #ffd670 73%, #e9ff70);
+}
+
+.login-box{
+    background-image: linear-gradient(97deg, #ff7a6e, #ff9770);
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0 
+    rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    width:496px;
+    height:392px;
+    border-radius: 8px;
+}
+.click-me{
+    font-family: Open Sans,sans-serif;
+    font-weight: 400;
+    border-radius: 1px;
+    background-image: radial-gradient(circle at 50% - 46%, #737373, #403d39);
+    box-shadow: 0 1px 3px 0 rega(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-container{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
