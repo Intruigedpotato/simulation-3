@@ -1,0 +1,21 @@
+.Profile {
+    width: 80%;
+    height: 630px;
+    display: flex;
+    justify-content: center;
+}
+.Profile-child {
+    /* PlaceHolder */
+}
+.profile-user-tile {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.2);
+    width:841px;
+    box-sizing: border-box;
+    height: 146px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
