@@ -38,6 +38,7 @@ passport.use(new Auth0Strategy({
             const user = profile._json;
             db.create_user([user.given_name, user.family_name, user.email, user.picture, user.identities[0].user_id, user.gender])
                 .then(user => {
+                   
                     return done(null, user[0].id)
                 })
         }
@@ -52,7 +53,7 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 
 app.get('/auth/me', (req, res) => {
     if(!req.user) {
-        return res.status(404).send("User not found.")
+        return res.status(400).send("User not found.")
     }
     return res.status(200).send(req.user);
 })
@@ -63,16 +64,10 @@ app.get('/auth/logout', (req, res) => {
 }
 )
 
-app.get('/api/currentuser', (req, res, next) => {
-    console.log(req.user)
-    res.status(200).send(req.user);
-})
-
 app.get('/api/users', (req, res, next) => {
     const db = req.app.get('db');
     db.get_all_users()
         .then(users => {
-            console.log(users)
             return res.status(200).send(users)
         })
     .catch( () => res.status(500).send() );
@@ -80,12 +75,16 @@ app.get('/api/users', (req, res, next) => {
 })
 
 passport.serializeUser(function (id, done) {
+    console.log(1,id)
     done(null, id);
 });
 
 passport.deserializeUser(function (id, done) {
+    console.log(2,id)
+
     app.get('db').find_current_user([id])
         .then(user => {
+            console.log(user)
             done(null, user[0]);
         })
 })

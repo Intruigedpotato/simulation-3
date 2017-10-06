@@ -8,6 +8,7 @@ export default class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            currentUser: {},
             update: false,
             first_name: '',
             last_name: '',
@@ -21,11 +22,13 @@ export default class Profile extends Component {
         }
     }
     componentDidMount() {
-        axios.get(`${url}/getcurrentuser`).then(res => {
+        axios.get(`/auth/me`).then(res => {
+            console.log(res.data)
             this.setState({
-                first:''
+                currentUser: res.data
             })
         })
+        .catch( err => console.log(err))
     }
     render() {
         return (
