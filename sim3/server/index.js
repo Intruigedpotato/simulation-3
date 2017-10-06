@@ -34,7 +34,7 @@ passport.use(new Auth0Strategy({
             return done(null, user[0].id)
         } else {
             const user = profile._json;
-            db.create_user([user.name, user.email, user.picture, user.identities[0].user_id])
+            db.create_user([user.given_name, user.family_name, user.email, user.picture, user.identities[0].user_id, user.gender])
                 .then(user => {
                     return done(null, user[0].id)
                 })
