@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import url from '../../url/url';
 import axios from 'axios';
 //import Nav from '../Nav/Nav'
@@ -32,7 +33,7 @@ export default class Dashboard extends Component {
                 <div className='current-user-tile'>
                     <img className='img current-user-img' src='' />
                     <h1 className='current-user-name'>{first_name}{last_name}</h1>
-                    <button className='button edit-profile' >Edit Profile</button>
+                    <Link to='/profile' className='button edit-profile' >Edit Profile</Link>
                 </div>
                 <div className='welcome-box'>Welcome to Helo! Find recommended friends based on your similarities, and even search for them by name. The more you update your profile, the better recommendations we can make!</div>
                 <div className='friends-list'>
