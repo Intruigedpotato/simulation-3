@@ -30,13 +30,24 @@
     width: 120px;
     margin-top:34px;
 }
+.Helo {
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-top: 10px;
+    font-size: 100px;
+    color:#fff;
+}
 
 .click-me{
-    font-family: Open Sans,sans-serif;
     font-weight: 400;
-    border-radius: 1px;
-    background-image: radial-gradient(circle at 50% - 46%, #737373, #403d39);
-    box-shadow: 0 1px 3px 0 rega(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height: 100%;
+    width:100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .button-container{
@@ -45,4 +56,16 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+.button{
+    background-color: #403d39;
+    font-family: sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    border-radius:3px;
+    height: 45px;
 }

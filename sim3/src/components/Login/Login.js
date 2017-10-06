@@ -17,13 +17,15 @@ import logo from './../../assets/logo.png';
               <div className="login-box">
                   <div className="logo">
                     <img className="winky-guy" src={logo}/>
+                    <div className="Helo"> Helo </div>
                   </div>
-                  <div className="button-container"></div>
-               <a  href={ process.env.REACT_APP_LOGIN } >    
-                {/* <button className="click-me"> */}
-                    Login / Register
-                    {/* </button> */}
+                  <div className="button-container">
+                      <div className="button">
+               <a className="click-me" href={ process.env.REACT_APP_LOGIN } >    
+                    Login / Register   
                 </a>
+                </div>
+                </div>
                 </div>
             </div>
         )
