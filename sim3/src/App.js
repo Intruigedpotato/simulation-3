@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Profile from './components/Profile/Profile';
 import Search from './components/Search/Search';
 
+
 class App extends Component {
   render() {
     return (
